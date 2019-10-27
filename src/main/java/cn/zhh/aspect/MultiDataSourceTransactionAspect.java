@@ -25,14 +25,22 @@ import java.util.Stack;
 public class MultiDataSourceTransactionAspect {
 
     /**
-     * 线程变量：为什么使用栈？※为了达到后进先出的效果※
+     * 线程本地变量：为什么使用栈？※为了达到后进先出的效果※
      */
     private static final ThreadLocal<Stack<Pair<DataSourceTransactionManager, TransactionStatus>>> THREAD_LOCAL = new ThreadLocal<>();
+
+    /**
+     * 用于获取事务管理器
+     */
     @Autowired
     private ApplicationContext applicationContext;
-    private DefaultTransactionDefinition def = new DefaultTransactionDefinition();
 
+    /**
+     * 事务声明
+     */
+    private DefaultTransactionDefinition def = new DefaultTransactionDefinition();
     {
+        // 非只读模式
         def.setReadOnly(false);
         // 事务隔离级别：采用数据库的
         def.setIsolationLevel(TransactionDefinition.ISOLATION_DEFAULT);

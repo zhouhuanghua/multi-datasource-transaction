@@ -3,12 +3,12 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://thunderclap.cn:9527/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: test
+    password: test
+    url: jdbc:mysql://jiubugaosuni.com:8888/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
   datasource2:
-      username: root
-      password: 123456
-      url: jdbc:mysql://thunderclap.cn:9527/test2?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      username: test2
+      password: test2
+      url: jdbc:mysql://biexiangzhidao.net:6666/test2?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
       driver-class-name: com.mysql.cj.jdbc.Driver
